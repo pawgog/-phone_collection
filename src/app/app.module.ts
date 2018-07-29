@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularMaterialModule } from './angularMaterial.module';
 
 
 import { AppComponent } from './app.component';
+import { DataListModule } from './components/dataList.module';
 
 
 @NgModule({
@@ -10,9 +13,17 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    DataListModule,
+    AngularMaterialModule
+  ],
+  exports: [
+    AngularMaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

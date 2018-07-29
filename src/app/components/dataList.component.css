@@ -1,0 +1,88 @@
+/* angular material */
+::ng-deep .mat-input-flex.mat-form-field-flex{
+  border-bottom: 1px solid black;
+}
+::ng-deep .mat-form-field-infix {
+  display: inherit !important;
+}
+
+.example-form {
+  max-width: 480px;
+  height: 100px;
+  width: 50%;
+  padding: 20px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+/* display items */
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.item:hover {
+  box-shadow: 0 8px 16px 5px rgba(0,0,0,0.2);
+}
+.item {
+  width: 300px;
+  min-height: 230px;
+  border: 1px solid grey;
+  margin: 10px;
+  margin-right: 0px;
+  padding: 2px 16px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.itemNoMatch {
+  align-content: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+.clearButton {
+  cursor: pointer;
+  border: 0;
+  font-weight: bold;
+}
+
+/* item content */
+.itemMake {
+  background-color: #9C2AA0;
+  border-top: 1px solid #9C2AA0;
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+}
+.itemDetail {
+  padding: 10px 0px 10px 0px
+}
+.itemName {
+  font-size: 25px;
+  font-weight: bold;
+}
+.itemModel {
+  font-size: 20px;
+}
+.itemTarDetail {
+  background-color: #F4F4F4;
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
+  padding: 10px 0px 10px 0px;
+}
+.itemTarName {
+  font-size: 22px;
+  text-align: center;
+
+}
+.itemTarData li {
+  text-align: left;
+  position: relative;
+  font-size: 20px;
+  margin: 0;
+  background: url("../../assets/img/Tick_PNG.png") 0 4px no-repeat;
+  padding-left: 26px;
+  list-style: none;
+}

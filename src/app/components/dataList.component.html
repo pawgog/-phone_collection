@@ -1,0 +1,40 @@
+<div class="container">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" [(ngModel)]="searchText" name="searchText" placeholder="Search items by name">
+      <button class="clearButton" (click)="clearText()">X</button>
+    </mat-form-field>
+  </form>
+  <mat-form-field class="example-form">
+    <mat-select [(ngModel)]="selectedItem" (change)="sortData(selectedItem)" placeholder="Order by:">
+      <mat-option value="" disabled>Choose order</mat-option>
+      <mat-option value="producerAZ">producer A-Z</mat-option>
+      <mat-option value="producerZA">producer Z-A</mat-option>
+      <mat-option value="modelAZ">model A-Z</mat-option>
+      <mat-option value="modelZA">model Z-A</mat-option>
+      <mat-option value="internet_min_max">internet min-max</mat-option>
+      <mat-option value="internet_max_min">internet max-min</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="container">
+  <div class="item" *ngFor="let item of dataList |  searchData : searchText">
+      <div *ngIf="item" class="card" style="width: 100%;">
+        <div class="itemMake">{{item.make}}</div>
+        <div class="itemDetail">
+          <div class="itemName">{{item.name}}</div>
+          <div class="itemModel">Model: {{item.model}}</div>
+        </div>
+        <div class="itemTarDetail">
+          <div class="itemTarName">{{item.tar_name}}</div>
+          <ul class="itemTarData">
+            <li>{{item.tar_data}} MB</li>
+            <li>Minutes: {{item.tar_minutes}}</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div class="itemNoMatch" *ngIf="(dataList | searchData : searchText).length === 0">
+      <span>No matches items!</span>
+  </div>
+</div>
